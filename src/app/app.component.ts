@@ -4,13 +4,15 @@ import { AuthComponent } from './auth/auth.component';
 import { LearningResourcesComponent } from './learning-resources/learning-resources.component';
 import { AuthService } from './services/auth.service';
 import { css } from './shared/constatnts/css.constants';
+import { AuthDirective } from './shared/directives/auth.directive';
+import { CssClassDirective } from './shared/directives/css-class.directive';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [AuthComponent, LearningResourcesComponent],
+  imports: [AuthComponent, LearningResourcesComponent, AuthDirective, CssClassDirective],
 })
 export class AppComponent implements OnInit {
   private authServ = inject(AuthService);
