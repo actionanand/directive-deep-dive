@@ -19,6 +19,16 @@ export class AppComponent implements OnInit {
 
   isAdmin = computed(() => this.authServ.activePermission() === 'admin');
 
+  myCredentials = {
+    email: 'test@ar.com',
+    password: '',
+  };
+
+  listenToModelSignalChange(credential: { email: string; password: string }) {
+    console.log('credential using model signal');
+    console.log('Email: ' + credential.email + ' | ' + 'Password: ' + credential.password);
+  }
+
   ngOnInit() {
     console.log('%cLogin %s', css, ' Credentials!');
     console.log(

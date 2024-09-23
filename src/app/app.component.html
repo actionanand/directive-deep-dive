@@ -3,7 +3,7 @@
 
   <hr />
 
-  <app-auth />
+  <app-auth [(credential)]="myCredentials" (credentialChange)="listenToModelSignalChange($event)" />
 
   <!-- @if (isAdmin()) {
     <p>Only visible to Admin!</p>
@@ -16,6 +16,8 @@
   <!-- <ng-template [appAuth]="'admin'">
     <p>Only visible to Admin!</p>
   </ng-template> -->
+
+  {{ myCredentials.email }}
 
   <p *appAuth="'admin'" appCssClass="admin">Only visible to Admin!</p>
   <p *appAuth="'user'" appCssClass="authenticated">Only visible to Loged In User!</p>
